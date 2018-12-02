@@ -7,8 +7,8 @@
 //
 
 #include <iostream>
-#include "Day1.cpp"
-#include "Day2.cpp"
+#include "days/Day1.cpp"
+#include "days/Day2.cpp"
 
 int main() {
     std::cout << "-*-*-*-*Day 1*-*-*-*-" << std::endl;

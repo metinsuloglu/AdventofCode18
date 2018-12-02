@@ -1,8 +1,8 @@
 //
-//  Day1.cpp
+//  Day2.cpp
 //  AdventofCode18
 //
-//  Created by Metin Suloglu on 01/12/2018.
+//  Created by Metin Suloglu on 02/12/2018.
 //  Copyright © 2018 Metin Suloglu. All rights reserved.
 //
 
