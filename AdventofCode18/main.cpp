@@ -9,6 +9,7 @@
 #include <iostream>
 #include "days/Day1.cpp"
 #include "days/Day2.cpp"
+#include "days/Day3.cpp"
 
 int main() {
     std::cout << "-*-*-*-*Day 1*-*-*-*-" << std::endl;
@@ -18,6 +19,10 @@ int main() {
     std::cout << "-*-*-*-*Day 2*-*-*-*-" << std::endl;
     Day2::run(1);
     Day2::run(2);
+    std::cout << "-*-*-*-*-*-*-*-*-*-*-\n" << std::endl;
+    std::cout << "-*-*-*-*Day 3*-*-*-*-" << std::endl;
+    Day3::run(1);
+    Day3::run(2);
     std::cout << "-*-*-*-*-*-*-*-*-*-*-\n" << std::endl;
     
     return 0;
