@@ -7,9 +7,9 @@
 //
 
 #include <iostream>
-#include "days/Day1.cpp"
-#include "days/Day2.cpp"
-#include "days/Day3.cpp"
+#include "headers/Day1.h"
+#include "headers/Day2.h"
+#include "headers/Day3.h"
 
 int main() {
     std::cout << "-*-*-*-*Day 1*-*-*-*-" << std::endl;
