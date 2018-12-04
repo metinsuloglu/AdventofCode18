@@ -9,6 +9,7 @@
 #ifndef AoCDay_h
 #define AoCDay_h
 
+#include <stdio.h>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -18,6 +19,7 @@
 #include <cmath>
 #include <map>
 #include <unordered_set>
+#include <regex>
 
 class AoCDay {
 public:
