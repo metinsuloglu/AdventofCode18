@@ -18,11 +18,10 @@ std::vector<std::string> AoCDay::readFileLines(const std::string& fileName) {
 }
 
 std::string AoCDay::readFileAsString(const std::string& fileName) {
-    std::ifstream in(fileName, std::ios::in);
+    std::ifstream file(fileName, std::ios::in);
+    std::string line;
     std::string readString = "";
-    std::ostringstream fileText;
-    fileText << in.rdbuf();
-    in.close();
-    readString = fileText.str();
+    while(getline(file, line))
+        readString.append(line);
     return readString;
 }

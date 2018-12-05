@@ -18,6 +18,7 @@
 #include <set>
 #include <cmath>
 #include <map>
+#include <algorithm>
 #include <unordered_set>
 #include <regex>
 

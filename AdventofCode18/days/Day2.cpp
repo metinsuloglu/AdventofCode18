@@ -9,7 +9,7 @@
 #include "../headers/Day2.h"
 
 void Day2::run(int part) {
-    std::vector<std::string> lines =  AoCDay::readFileLines("inputs/day2.txt");
+    std::vector<std::string> lines = AoCDay::readFileLines("inputs/day2.txt");
     
     if(part == 1) {
         std::cout << "~Part 1~" << std::endl;
