@@ -1,9 +1,10 @@
 //
-//  Day2.cpp
-//  AdventofCode18
+//  Advent of Code 2018
+//  Day 2: Inventory Management System
 //
-//  Created by Metin Suloglu on 02/12/2018.
-//  Copyright © 2018 Metin Suloglu. All rights reserved.
+//  adventofcode.com
+//
+//  Metin Suloglu, Dec 2018
 //
 
 #include "../headers/Day2.h"

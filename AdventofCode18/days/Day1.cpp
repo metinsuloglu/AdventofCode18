@@ -1,9 +1,10 @@
 //
-//  Day1.cpp
-//  AdventofCode18
+//  Advent of Code 2018
+//  Day 1: Chronal Calibration
 //
-//  Created by Metin Suloglu on 01/12/2018.
-//  Copyright © 2018 Metin Suloglu. All rights reserved.
+//  adventofcode.com
+//
+//  Metin Suloglu, Dec 2018
 //
 
 #include "../headers/Day1.h"

@@ -1,22 +1,23 @@
 //
-//  Day5.cpp
-//  AdventofCode18
+//  Advent of Code 2018
+//  Day 5: Alchemical Reduction
 //
-//  Created by Metin Suloglu on 05/12/2018.
-//  Copyright © 2018 Metin Suloglu. All rights reserved.
+//  adventofcode.com
+//
+//  Metin Suloglu, Dec 2018
 //
 
 #include "../headers/Day5.h"
 
-std::string react(std::string& polymer) {
-    for(int i = 0; i < polymer.size() - 1; i++) {
-        if((polymer[i+1] == polymer[i] + 32) || (polymer[i+1] == polymer[i] - 32)) {
-            polymer.erase(i, 2);
-            (i == 0) ? i = -1 : i -= 2;
-        }
+int react(std::string& polymer) {
+    std::stack<char> s;
+    for(char c: polymer) {
+        if(s.empty()) s.push(c);
+        else if(s.top() == c - 32 || s.top() == c + 32) s.pop();
+        else s.push(c);
     }
     
-    return polymer;
+    return (int)s.size();
 }
 
 void Day5::run(int part) {
@@ -25,9 +26,7 @@ void Day5::run(int part) {
     if(part == 1) {
         std::cout << "~Part 1~" << std::endl;
         
-        react(polymer);
-        
-        std::cout << "Answer: " << polymer.size() << std::endl;
+        std::cout << "Answer: " << react(polymer) << std::endl;
         
     } else {
         std::cout << "~Part 2~" << std::endl;
@@ -37,8 +36,7 @@ void Day5::run(int part) {
         for(int i = 'a'; i <= 'z'; i++) {
             polymer.erase(std::remove_if(polymer.begin(), polymer.end(),
                                          [i](char c){return c == i || c == i - 32;}), polymer.end());
-            react(polymer);
-            if(polymer.size() < minLength) { minLength = (int)polymer.size(); }
+            minLength = std::min(react(polymer), minLength);
             polymer = reset;
         }
         

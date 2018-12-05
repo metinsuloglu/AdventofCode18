@@ -1,9 +1,10 @@
 //
-//  Day4.h
-//  AdventofCode18
+//  Advent of Code 2018
+//  Day 4: Repose Record
 //
-//  Created by Metin Suloglu on 04/12/2018.
-//  Copyright © 2018 Metin Suloglu. All rights reserved.
+//  adventofcode.com
+//
+//  Metin Suloglu, Dec 2018
 //
 
 #ifndef Day4_h

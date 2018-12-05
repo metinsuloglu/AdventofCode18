@@ -1,9 +1,8 @@
 //
-//  AoCDay.cpp
-//  AdventofCode18
+//  Advent of Code 2018
+//  adventofcode.com
 //
-//  Created by Metin Suloglu on 01/12/2018.
-//  Copyright © 2018 Metin Suloglu. All rights reserved.
+//  Metin Suloglu, Dec 2018
 //
 
 #include "AoCDay.h"
