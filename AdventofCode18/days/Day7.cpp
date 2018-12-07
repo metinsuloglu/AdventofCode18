@@ -29,7 +29,7 @@ void Day7::run(int part) {
     if(part == 1) {
         std::cout << "~Part 1~" << std::endl;
         
-        std::cout << "Answer: ";
+        std::cout << "Answer: ";
         while(nodes.size() != 0) {
             std::vector<char> next;
             bool allCompleted;
