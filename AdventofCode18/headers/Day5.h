@@ -15,6 +15,7 @@
 class Day5 {
 public:
     static void run(int part);
+    static int react(std::string& polymer);
 };
 
 #endif /* Day5_h */

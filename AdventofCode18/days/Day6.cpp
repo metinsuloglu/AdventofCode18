@@ -9,26 +9,11 @@
 
 #include "../headers/Day6.h"
 
-struct Point {
-    int x, y;
-    
-    Point() : Point(0, 0) {}
-    Point(int x, int y) {
-        this->x = x;
-        this->y = y;
-    }
-    
-    bool operator<(const Point& p2) const {
-        if(x != p2.x) return (x < p2.x);
-        return (y < p2.y);
-    }
-};
-
-int manhattanDistanceBetween(const Point& p1, const Point& p2) {
+int Day6::manhattanDistanceBetween(const Point& p1, const Point& p2) {
     return std::abs(p1.x - p2.x) + std::abs(p1.y - p2.y);
 }
 
-std::vector<Point> getClosestCoords(const std::vector<Point>& coords, const Point& p) {
+std::vector<Point> Day6::getClosestCoords(const std::vector<Point>& coords, const Point& p) {
     int minDist = INT_MAX, dist;
     std::vector<Point> closest;
     for(Point coord: coords) {
@@ -43,7 +28,7 @@ std::vector<Point> getClosestCoords(const std::vector<Point>& coords, const Poin
     return closest;
 }
 
-int sumToAllCoords(const std::vector<Point>& coords, const Point& p) {
+int Day6::sumToAllCoords(const std::vector<Point>& coords, const Point& p) {
     int sum = 0;
     for(Point coord: coords)
         sum += manhattanDistanceBetween(coord, p);

@@ -9,10 +9,6 @@
 
 #include "../headers/Day4.h"
 
-struct DateTime {
-    int year, month, day, hour, minute;
-};
-
 void Day4::run(int part) {
     std::vector<std::string> lines = AoCDay::readFileLines("inputs/day4.txt");
     std::sort(lines.begin(), lines.end());

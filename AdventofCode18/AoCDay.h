@@ -21,6 +21,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <unordered_set>
+#include <numeric>
 #include <regex>
 
 class AoCDay {

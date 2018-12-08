@@ -9,7 +9,7 @@
 
 #include "../headers/Day5.h"
 
-int react(std::string& polymer) {
+int Day5::react(std::string& polymer) {
     std::stack<char> s;
     for(char c: polymer) {
         if(s.empty()) s.push(c);

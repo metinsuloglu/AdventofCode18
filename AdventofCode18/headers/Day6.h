@@ -12,9 +12,28 @@
 
 #include "AoCDay.h"
 
+struct Point {
+    int x, y;
+    
+    Point() : Point(0, 0) {}
+    
+    Point(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
+    
+    bool operator<(const Point& p2) const {
+        if(x != p2.x) return (x < p2.x);
+        return (y < p2.y);
+    }
+};
+
 class Day6 {
 public:
     static void run(int part);
+    static int manhattanDistanceBetween(const Point& p1, const Point& p2);
+    static std::vector<Point> getClosestCoords(const std::vector<Point>& coords, const Point& p);
+    static int sumToAllCoords(const std::vector<Point>& coords, const Point& p);
 };
 
 #endif /* Day6_h */

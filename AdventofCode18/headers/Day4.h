@@ -12,6 +12,10 @@
 
 #include "AoCDay.h"
 
+struct DateTime {
+    int year, month, day, hour, minute;
+};
+
 class Day4 {
 public:
     static void run(int part);
