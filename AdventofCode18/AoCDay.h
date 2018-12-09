@@ -22,6 +22,8 @@
 #include <algorithm>
 #include <unordered_set>
 #include <numeric>
+#include <list>
+#include <iterator>
 #include <regex>
 
 class AoCDay {

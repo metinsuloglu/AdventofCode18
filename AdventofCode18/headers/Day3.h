@@ -28,7 +28,7 @@ struct Rect {
 
 class Day3 {
 public:
-    static void run(int part);
+    static void run(int);
 };
 
 #endif /* Day3_h */

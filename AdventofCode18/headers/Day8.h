@@ -14,8 +14,8 @@
 
 class Day8 {
 public:
-    static void run(int part);
-    static int calculateSum(const std::vector<int>& numbers, int& index, int& part);
+    static void run(int);
+    static int calculateSum(const std::vector<int>&, int&, int&);
 };
 
 #endif /* Day8_h */

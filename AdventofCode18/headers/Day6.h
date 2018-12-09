@@ -30,10 +30,10 @@ struct Point {
 
 class Day6 {
 public:
-    static void run(int part);
-    static int manhattanDistanceBetween(const Point& p1, const Point& p2);
-    static std::vector<Point> getClosestCoords(const std::vector<Point>& coords, const Point& p);
-    static int sumToAllCoords(const std::vector<Point>& coords, const Point& p);
+    static void run(int);
+    static int manhattanDistanceBetween(const Point&, const Point&);
+    static std::vector<Point> getClosestCoords(const std::vector<Point>&, const Point&);
+    static int sumToAllCoords(const std::vector<Point>&, const Point&);
 };
 
 #endif /* Day6_h */

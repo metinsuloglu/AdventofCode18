@@ -14,7 +14,7 @@
 
 class Day1 {
 public:
-    static void run(int part);
+    static void run(int);
 };
 
 #endif /* Day1_h */

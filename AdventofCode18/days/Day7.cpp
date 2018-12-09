@@ -59,8 +59,8 @@ void Day7::run(int part) {
         const int numWorkers = 5;
         const int stepTime = 60;
         
-        char workers[numWorkers];
-        int counters[numWorkers];
+        std::vector<char> workers(numWorkers);
+        std::vector<int> counters(numWorkers);
         
         for(int i = 0; i < numWorkers; i++) counters[i] = -1; // Initialize counters
         
@@ -92,9 +92,11 @@ void Day7::run(int part) {
             if(currJobs.empty()) break; // No worker is working on anything exit loop
             
             // Decrease counters
+            int minTime = INT_MAX;
+            for(int currTime: counters) if(currTime != -1 && currTime < minTime) minTime = currTime;
             for(int i = 0; i < numWorkers; i++) {
                 if(counters[i] > -1) {
-                    counters[i]--;
+                    counters[i] -= minTime;
                     if(counters[i] == 0) { // Work finished
                         done[workers[i]] = true;
                         counters[i] = -1;
@@ -104,7 +106,7 @@ void Day7::run(int part) {
                 }
             }
             
-            time++;
+            time += minTime;
         }
         
         std::cout << "Answer: " << time << std::endl;

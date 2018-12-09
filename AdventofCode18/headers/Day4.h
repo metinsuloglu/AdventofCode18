@@ -18,7 +18,7 @@ struct DateTime {
 
 class Day4 {
 public:
-    static void run(int part);
+    static void run(int);
 };
 
 #endif /* Day4_h */
