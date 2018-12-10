@@ -12,6 +12,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <valarray>
 #include <sstream>
 #include <string>
 #include <set>
