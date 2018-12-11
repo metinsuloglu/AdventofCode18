@@ -38,7 +38,6 @@ void printSky(std::vector<std::valarray<int>> points) {
     }
 }
 
-
 void Day10::run(int iterLow, int iterHi) {
     
     std::vector<std::string> lines = AoCDay::readFileLines("inputs/day10.txt");
@@ -66,8 +65,6 @@ void Day10::run(int iterLow, int iterHi) {
             if(iter == iterHi) break;
         }
     }
-    
-    std::cout << std::endl;
     
 }
 
