@@ -15,17 +15,9 @@
 struct Point {
     int x, y;
     
-    Point() : Point(0, 0) {}
-    
-    Point(int x, int y) {
-        this->x = x;
-        this->y = y;
-    }
-    
-    bool operator<(const Point& p2) const {
-        if(x != p2.x) return (x < p2.x);
-        return (y < p2.y);
-    }
+    Point();
+    Point(int, int);
+    bool operator<(const Point&) const;
 };
 
 class Day6 {

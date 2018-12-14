@@ -9,6 +9,16 @@
 
 #include "../headers/Day6.h"
 
+Point::Point() : Point(0, 0) {}
+Point::Point(int x, int y) {
+    this->x = x;
+    this->y = y;
+}
+bool Point::operator<(const Point& p2) const {
+    if(this->x != p2.x) return (this->x < p2.x);
+    return (this->y < p2.y);
+}
+
 int Day6::manhattanDistanceBetween(const Point& p1, const Point& p2) {
     return std::abs(p1.x - p2.x) + std::abs(p1.y - p2.y);
 }

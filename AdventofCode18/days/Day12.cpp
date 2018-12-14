@@ -42,7 +42,6 @@ void Day12::run(int part) {
     if(part == 1) {
         std::cout << "~Part 1~" << std::endl;
         
-        int sum = 0;
         for(int i = 0; i < 20; i++) {
             int minIndex = INT_MAX, maxIndex = INT_MIN;
             for(auto& [n, b]: plants) {
@@ -61,6 +60,7 @@ void Day12::run(int part) {
             plants = newPlants;
         }
         
+        int sum = 0;
         for(auto& [n, b]: plants) if(b) sum += n;
         
         std::cout << "Answer: " << sum << std::endl;
@@ -68,7 +68,7 @@ void Day12::run(int part) {
     } else {
         std::cout << "~Part 2~" << std::endl;
         
-        long sum = 0;
+        long sum;
         // long prevSum = 0;
         for(int i = 0; i < 101; i++) {
             int minIndex = INT_MAX, maxIndex = INT_MIN;
@@ -94,6 +94,7 @@ void Day12::run(int part) {
             prevSum = sum;*/
         }
         
+        sum = 0;
         for(auto& [n, b]: plants) if(b) sum += n;
         
         std::cout << "Answer: " << sum + (50000000000 - 101) * 57 << std::endl;

@@ -13,17 +13,11 @@
 #include "AoCDay.h"
 
 struct Rect {
-    int id;
+    int ID;
     int x, y;
     int w, h;
     
-    Rect(std::string& id, std::string& loc, std::string& size) {
-        this->id = std::stoi(id);
-        this->x = std::stoi(loc.substr(0, loc.find(",")));
-        this->y = std::stoi(loc.substr(loc.find(",") + 1, loc.size()));
-        this->w = std::stoi(size.substr(0, size.find("x")));
-        this->h = std::stoi(size.substr(size.find("x") + 1, size.size()));
-    }
+    Rect(std::string&, std::string&, std::string&);
 };
 
 class Day3 {
