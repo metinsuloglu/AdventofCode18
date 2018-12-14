@@ -36,22 +36,26 @@ void Day14::run(int part) {
     } else {
         std::cout << "~Part 2~" << std::endl;
         
-        std::string match = std::to_string(nRecipes);
-        std::string toMatch = "37";
+        std::vector<int> match;
+        while(nRecipes != 0) {
+            match.push_back(nRecipes % 10);
+            nRecipes /= 10;
+        }
+        std::reverse(match.begin(), match.end());
         
         while(true) {
-            std::string sum = std::to_string(scoreboard[elves[0]] + scoreboard[elves[1]]);
-            for(char d: sum) {
-                scoreboard.push_back(d - '0');
-                if(toMatch.length() < match.length()) toMatch += d;
-                else toMatch = (toMatch + d).substr(1, toMatch.length());
-                
-                if(scoreboard.size() < match.length()) continue;
-                
-                if(toMatch == match) {
-                    std::cout << "Answer: " << scoreboard.size() - match.length() << std::endl;
-                    return;
-                }
+            int sum = scoreboard[elves[0]] + scoreboard[elves[1]];
+            if(sum >= 10) { scoreboard.push_back(1); scoreboard.push_back(sum % 10); }
+            else scoreboard.push_back(sum);
+            
+            if(scoreboard.size() < match.size()) continue;
+            
+            if(std::equal(match.begin(), match.end(), scoreboard.end() - match.size())) {
+                std::cout << "Answer: " << scoreboard.size() - match.size() << std::endl;
+                return;
+            } else if(std::equal(match.begin(), match.end(), scoreboard.end() - match.size() - 1, scoreboard.end() - 1)) {
+                std::cout << "Answer: " << scoreboard.size() - match.size() - 1 << std::endl;
+                return;
             }
             
             elves[0] = (elves[0] + scoreboard[elves[0]] + 1) % scoreboard.size();
