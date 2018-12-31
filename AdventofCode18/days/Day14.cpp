@@ -52,7 +52,7 @@ void Day14::run(int part) {
             if(std::equal(match.begin(), match.end(), scoreboard.end() - match.size())) {
                 std::cout << "Answer: " << scoreboard.size() - match.size() << std::endl;
                 return;
-            } else if(std::equal(match.begin(), match.end(), scoreboard.end() - match.size() - 1, scoreboard.end() - 1)) {
+            } else if(scoreboard.size() >= match.size() + 1 && std::equal(match.begin(), match.end(), scoreboard.end() - match.size() - 1, scoreboard.end() - 1)) {
                 std::cout << "Answer: " << scoreboard.size() - match.size() - 1 << std::endl;
                 return;
             }
