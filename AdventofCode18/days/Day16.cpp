@@ -59,13 +59,21 @@ void Day16::run(int part) {
     std::vector<int> registers(4, 0);
     
     std::unordered_map<int, Opcode> realOpcodes;
-    std::unordered_map<int, std::unordered_set<Opcode>> possibleOpcodes;
+    std::unordered_map<int, std::vector<Opcode>> possibleOpcodes;
+    
+    std::vector<Opcode> allOpcodes;
+    for(int i = 0; i < 16; i++) {
+        allOpcodes.clear();
+        for(int j = 1; j <= 16; j++) allOpcodes.push_back(Opcode(j));
+        possibleOpcodes[i] = allOpcodes;
+    }
     
     int totalCount = 0, opcode;
     Instruction inst;
     std::vector<int> afterRegs(4);
     
     std::string before, instruction, after;
+    std::vector<Opcode> workingOpcodes;
     while(true) {
         getline(file, before);
         if(before == "") break;
@@ -76,17 +84,21 @@ void Day16::run(int part) {
         sscanf(instruction.c_str(), "%d %d %d %d", &opcode, &inst.A, &inst.B, &inst.C);
         sscanf(after.c_str(), "After:  [%d, %d, %d, %d]", &afterRegs[0], &afterRegs[1], &afterRegs[2], &afterRegs[3]);
         
-        int count = 0;
+        workingOpcodes.clear();
         for(int op = 1; op <= 16; op++) {
             inst.opcode = Opcode(op);
             std::vector<int> finalRegs = inst.execute(registers);
-            if(finalRegs == afterRegs) {
-                count++;
-                possibleOpcodes[opcode].insert(inst.opcode);
-            }
+            if(finalRegs == afterRegs) workingOpcodes.push_back(inst.opcode);
         }
         
-        if(count >= 3) totalCount++;
+        if(workingOpcodes.size() >= 3) totalCount++;
+        
+        std::sort(workingOpcodes.begin(), workingOpcodes.end());
+        std::sort(possibleOpcodes[opcode].begin(), possibleOpcodes[opcode].end());
+        
+        std::vector<Opcode> matchedOpcodes;
+        std::set_intersection(possibleOpcodes[opcode].begin(), possibleOpcodes[opcode].end(), workingOpcodes.begin(), workingOpcodes.end(), std::back_inserter(matchedOpcodes));
+        possibleOpcodes[opcode] = matchedOpcodes;
         
         inst.reset();
     }
@@ -105,10 +117,10 @@ void Day16::run(int part) {
         while(realOpcodes.size() < 16) {
             for(auto& [op, possibleOps]: possibleOpcodes) {
                 if(possibleOps.size() == 1) {
-                    realOpcodes[op] = *possibleOps.begin();
+                    realOpcodes[op] = possibleOps[0];
                     for(auto& [otherOp, otherPossibleOps]: possibleOpcodes) {
                         if(otherOp != op)
-                            otherPossibleOps.erase(realOpcodes[op]);
+                            otherPossibleOps.erase(std::remove(otherPossibleOps.begin(), otherPossibleOps.end(), realOpcodes[op]), otherPossibleOps.end());
                     }
                 }
             }
