@@ -10,7 +10,6 @@
 #include "../headers/Day14.h"
 
 void Day14::run(int part) {
-    std::vector<std::string> lines = AoCDay::readFileLines("inputs/day14.txt");
     std::vector<int> scoreboard {3, 7};
     int elves[2] = {0, 1};
     int nRecipes = 580741;
@@ -63,6 +62,5 @@ void Day14::run(int part) {
             
         }
     }
-    
 }
 

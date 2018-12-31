@@ -20,6 +20,7 @@
 #include "headers/Day12.h"
 #include "headers/Day13.h"
 #include "headers/Day14.h"
+#include "headers/Day16.h"
 
 int main() {
     std::cout << "-*-*-*-*Day 1*-*-*-*-" << std::endl;
@@ -76,6 +77,10 @@ int main() {
     std::cout << "-*-*-*-*Day 14*-*-*-*-" << std::endl;
     Day14::run(1);
     Day14::run(2);
+    std::cout << "-*-*-*-*-*-*-*-*-*-*-\n" << std::endl;
+    std::cout << "-*-*-*-*Day 16*-*-*-*-" << std::endl;
+    Day16::run(1);
+    Day16::run(2);
     std::cout << "-*-*-*-*-*-*-*-*-*-*-\n" << std::endl;
     
     return 0;
